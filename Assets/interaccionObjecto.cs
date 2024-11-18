@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InteraccionObjeto : MonoBehaviour
 {
@@ -33,7 +34,18 @@ public class InteraccionObjeto : MonoBehaviour
 
     void Entrar()
     {
-        Debug.Log("¡El jugador ha interactuado con el objeto!");
+        // Obtener la escena activa
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Verificar el nombre de la escena actual y cambiar a la otra
+        if (currentScene.name == "Casa")
+        {
+            SceneManager.LoadScene("Isla");
+        }
+        else if (currentScene.name == "Isla")
+        {
+            SceneManager.LoadScene("Casa");
+        }
     }
 
     void OnTriggerEnter(Collider other)
