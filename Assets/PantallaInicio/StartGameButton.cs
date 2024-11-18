@@ -6,6 +6,32 @@ public class StartGameButton : MonoBehaviour
     public Camera camaraInicio;
     public GameObject cameraController;
     public GameObject personaje;
+    public GameObject canvasJuego;
+
+    public void Start()
+    {
+        if (pantallaInicio != null)
+        {
+            pantallaInicio.SetActive(true);
+        }
+
+        if (camaraInicio != null)
+        {
+            camaraInicio.gameObject.SetActive(true);
+        }
+
+        if(cameraController != null) {
+            cameraController.SetActive(false);
+        }
+
+        if(personaje != null) {
+            personaje.SetActive(false);
+        }
+
+        if(canvasJuego != null) {
+            canvasJuego.SetActive(false);
+        }
+    }
 
     public void OnStartButtonClick()
     {
@@ -25,6 +51,10 @@ public class StartGameButton : MonoBehaviour
 
         if(personaje != null) {
             personaje.SetActive(true);
+        }
+
+        if(canvasJuego != null) {
+            canvasJuego.SetActive(true);
         }
     }
 }
