@@ -9,7 +9,7 @@ public class player : MonoBehaviour
 	public float w_speed, wb_speed, olw_speed, rn_speed, ro_speed;
 	public bool walking;
 	public Transform playerTrans;
-	
+
 	
 	void FixedUpdate(){
 		if(Input.GetKey(KeyCode.W)){
@@ -82,4 +82,5 @@ public class player : MonoBehaviour
 		}
         */
 	}
+	 
 }

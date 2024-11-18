@@ -3,7 +3,9 @@ guid: 0b8f2d21114d12f4d8b0a8660bb7330f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mensajeUI: {instanceID: 0}
+  - jugador: {fileID: 919132149155446097, guid: 189cdb7b69bf26e4e999c4b8e5440a8c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
