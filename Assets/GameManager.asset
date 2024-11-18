@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db16e914a50a6f04d869b128389fbe31, type: 3}
   m_Name: GameManager
   m_EditorClassIdentifier: 
-  energy: -2.1934385
+  energy: 82.83793
