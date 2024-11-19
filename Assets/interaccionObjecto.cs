@@ -6,7 +6,7 @@ public class InteraccionObjeto : MonoBehaviour
 {
     public float distanciaDeInteraccion = 3f;
     public TMP_Text mensajeUI;
-    public GameObject jugador; // Referencia directa al GameObject del jugador
+    public GameObject jugador;
     private bool enRango = false;
 
     void Update()
