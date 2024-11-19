@@ -7,13 +7,9 @@ public class StartGameButton : MonoBehaviour
     public GameObject cameraController;
     public GameObject personaje;
     public GameObject canvasJuego;
-    private static bool hasActionExecuted = false; // Verifica si la acción ya se ejecutó
 
     public void Start()
-    {   
-        if (hasActionExecuted== false){
-            hasActionExecuted=true;
-        
+    {
         if (pantallaInicio != null)
         {
             pantallaInicio.SetActive(true);
@@ -24,40 +20,19 @@ public class StartGameButton : MonoBehaviour
             camaraInicio.gameObject.SetActive(true);
         }
 
-        if(cameraController != null) {
+        if (cameraController != null)
+        {
             cameraController.SetActive(false);
         }
 
-        if(personaje != null) {
+        if (personaje != null)
+        {
             personaje.SetActive(false);
         }
 
-        if(canvasJuego != null) {
+        if (canvasJuego != null)
+        {
             canvasJuego.SetActive(false);
-        }
-        }
-        else if (hasActionExecuted==true){
-            if (pantallaInicio != null)
-        {
-            pantallaInicio.SetActive(false);
-        }
-
-        if (camaraInicio != null)
-        {
-            camaraInicio.gameObject.SetActive(false);
-        }
-
-        if(cameraController != null) {
-            cameraController.SetActive(true);
-        }
-
-        if(personaje != null) {
-            personaje.SetActive(true);
-        }
-
-        if(canvasJuego != null) {
-            canvasJuego.SetActive(true);
-        }
         }
     }
 
@@ -73,15 +48,18 @@ public class StartGameButton : MonoBehaviour
             camaraInicio.gameObject.SetActive(false);
         }
 
-        if(cameraController != null) {
+        if (cameraController != null)
+        {
             cameraController.SetActive(true);
         }
 
-        if(personaje != null) {
+        if (personaje != null)
+        {
             personaje.SetActive(true);
         }
 
-        if(canvasJuego != null) {
+        if (canvasJuego != null)
+        {
             canvasJuego.SetActive(true);
         }
     }
