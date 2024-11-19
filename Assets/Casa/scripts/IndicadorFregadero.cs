@@ -1,49 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class IndicadorFregadero : MonoBehaviour
 {
+    public TMP_Text mensajeUI;
+    public GameObject jugador;
 
-    public GameObject textObject;
-
-    // Start is called before the first frame update
     void Start()
     {
-        if (textObject != null)
+        if (mensajeUI != null)
         {
-            textObject.SetActive(false);
+            mensajeUI.text = "";
         }
-        
     }
 
-     private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el personaje entra en el área
-        if (other.CompareTag("Untagged"))
+        if (other.gameObject == jugador)
         {
-            if (textObject != null)
+            if (mensajeUI != null)
             {
-                textObject.SetActive(true); // Muestra el texto
+                mensajeUI.text = "Presiona E para interactuar con el fregadero.";
             }
         }
     }
 
-     private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        // Verifica si el personaje sale del área
-        if (other.CompareTag("Untagged"))
+        if (other.gameObject == jugador)
         {
-            if (textObject != null)
+            if (mensajeUI != null)
             {
-                textObject.SetActive(false); // Oculta el texto
+                mensajeUI.text = "";
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

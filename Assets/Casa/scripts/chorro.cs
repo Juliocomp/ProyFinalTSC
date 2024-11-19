@@ -1,42 +1,87 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using NVIDIA.Flex;
 
-public class chorro : MonoBehaviour
+public class Chorro : MonoBehaviour
 {
-    public GameObject flexSource; 
-    private bool isPlayerNear = false;   
+    public GameObject flexSource; // GameObject del emisor
+    private FlexSourceActor flexSourceActor;
+    public GameObject jugador;
+    private bool isPlayerNear = false;
+
+    private void Start()
+    {
+        // Obtener el componente Flex Source Actor del GameObject
+        if (flexSource != null)
+        {
+            flexSourceActor = flexSource.GetComponent<FlexSourceActor>();
+
+            if (flexSourceActor != null)
+            {
+                flexSourceActor.enabled = false;
+            }
+            else
+            {
+                Debug.LogError("El GameObject no tiene un componente Flex Source Actor.");
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el jugador está cerca del fregadero
-        if (other.CompareTag("Untagged"))
+        if (other.gameObject == jugador)
         {
-            isPlayerNear = true;
+            isPlayerNear = true; // El jugador está cerca
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // Verifica si el jugador se aleja del fregadero
-        if (other.CompareTag("Untagged"))
+        if (other.gameObject == jugador)
         {
-            isPlayerNear = false;
-            flexSource.SetActive(false); 
+            isPlayerNear = false; // El jugador salió del área
+            StopFlexSource(); // Detiene el emisor al salir
         }
     }
 
     private void Update()
     {
-        // Si el jugador está cerca y mantiene presionada la tecla E
-        if (isPlayerNear && Input.GetKey(KeyCode.E))
+        if (isPlayerNear)
         {
-            flexSource.SetActive(true); 
+            if (Input.GetKey(KeyCode.E))
+            {
+                StartFlexSource(); // Activa el emisor
+            }
+            else
+            {
+                StopFlexSource(); // Desactiva el emisor
+            }
         }
-        // Si el jugador suelta la tecla E
-        else if (Input.GetKeyUp(KeyCode.E))
+    }
+
+    private void StartFlexSource()
+    {
+        if (flexSourceActor != null && !flexSourceActor.enabled)
         {
-            flexSource.SetActive(false); 
+            if (flexSource != null)
+            {
+                flexSource.SetActive(true);
+            }
+
+            flexSourceActor.enabled = true; // Activa el componente Flex Source Actor
         }
-    }   
+    }
+
+    private void StopFlexSource()
+    {
+        if (flexSourceActor != null)
+        {
+            flexSourceActor.enabled = false; // Desactiva el emisor Flex
+
+            if (flexSource != null)
+            {
+                flexSource.SetActive(false);
+            }
+        }
+    }
+
 }
