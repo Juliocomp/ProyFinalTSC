@@ -39,10 +39,11 @@ public class Chorro : MonoBehaviour
     {
         if (other.gameObject == jugador)
         {
-            isPlayerNear = false; // El jugador salió del área
+            isPlayerNear = false;
             StopFlexSource(); 
         }
     }
+
 
     private void Update()
     {
@@ -67,21 +68,37 @@ public class Chorro : MonoBehaviour
 
     private void StartFlexSource()
     {
-        if (flexSourceActor != null && !isFlexActive)
+        if (flexSourceActor != null && flexSource != null && !isFlexActive)
         {
-            flexSource.SetActive(true);
-            flexSourceActor.enabled = true; // Activa el componente Flex Source Actor
-            isFlexActive = true; 
+            try
+            {
+                flexSource.SetActive(true);
+                flexSourceActor.enabled = true; // Activa el componente
+                isFlexActive = true; // Actualiza el estado
+                Debug.Log("Flex Source activado correctamente.");
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError("Error al activar Flex Source: " + ex.Message);
+            }
         }
     }
 
     private void StopFlexSource()
     {
-        if (flexSourceActor != null && isFlexActive)
+        if (flexSourceActor != null && flexSource != null && isFlexActive)
         {
-            flexSourceActor.enabled = false; // Desactiva el componente Flex Source Actor
-            flexSource.SetActive(false); 
-            isFlexActive = false;
+            try
+            {
+                flexSourceActor.enabled = false; // Desactiva el componente
+                flexSource.SetActive(false); // Desactiva el objeto
+                isFlexActive = false; // Actualiza el estado
+                Debug.Log("Flex Source desactivado correctamente.");
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError("Error al desactivar Flex Source: " + ex.Message);
+            }
         }
     }
 }
