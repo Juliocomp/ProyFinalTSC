@@ -7,17 +7,18 @@ public class Chorro : MonoBehaviour
     private FlexSourceActor flexSourceActor;
     public GameObject jugador;
     private bool isPlayerNear = false;
+    private bool isFlexActive = false; // Estado actual del emisor
 
     private void Start()
     {
-        // Obtener el componente Flex Source Actor del GameObject
+        // Obtener el componente FlexSourceActor
         if (flexSource != null)
         {
             flexSourceActor = flexSource.GetComponent<FlexSourceActor>();
-
             if (flexSourceActor != null)
             {
                 flexSourceActor.enabled = false;
+                flexSource.SetActive(false); 
             }
             else
             {
@@ -39,7 +40,7 @@ public class Chorro : MonoBehaviour
         if (other.gameObject == jugador)
         {
             isPlayerNear = false; // El jugador salió del área
-            StopFlexSource(); // Detiene el emisor al salir
+            StopFlexSource(); 
         }
     }
 
@@ -49,39 +50,39 @@ public class Chorro : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                StartFlexSource(); // Activa el emisor
+                if (!isFlexActive) 
+                {
+                    StartFlexSource();
+                }
             }
             else
             {
-                StopFlexSource(); // Desactiva el emisor
+                if (isFlexActive) 
+                {
+                    StopFlexSource();
+                }
             }
         }
     }
 
     private void StartFlexSource()
     {
-        if (flexSourceActor != null && !flexSourceActor.enabled)
+        if (flexSourceActor != null && !isFlexActive)
         {
-            if (flexSource != null)
-            {
-                flexSource.SetActive(true);
-            }
-
+            flexSource.SetActive(true);
             flexSourceActor.enabled = true; // Activa el componente Flex Source Actor
+            isFlexActive = true; 
         }
     }
 
     private void StopFlexSource()
     {
-        if (flexSourceActor != null)
+        if (flexSourceActor != null && isFlexActive)
         {
-            flexSourceActor.enabled = false; // Desactiva el emisor Flex
-
-            if (flexSource != null)
-            {
-                flexSource.SetActive(false);
-            }
+            flexSourceActor.enabled = false; // Desactiva el componente Flex Source Actor
+            flexSource.SetActive(false); 
+            isFlexActive = false;
         }
     }
-
 }
+   
