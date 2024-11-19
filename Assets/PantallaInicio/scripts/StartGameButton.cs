@@ -8,8 +8,19 @@ public class StartGameButton : MonoBehaviour
     public GameObject personaje;
     public GameObject canvasJuego;
 
+    private static bool juegoIniciado = false;
+
+    private void Awake()
+    {
+        // Mover este GameObject al nivel raíz de la jerarquía antes de usar DontDestroyOnLoad
+        transform.SetParent(null);
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public void Start()
     {
+        if(juegoIniciado) return;
+
         if (pantallaInicio != null)
         {
             pantallaInicio.SetActive(true);
@@ -62,5 +73,7 @@ public class StartGameButton : MonoBehaviour
         {
             canvasJuego.SetActive(true);
         }
+
+        juegoIniciado = true;
     }
 }
