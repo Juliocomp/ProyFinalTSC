@@ -1155,7 +1155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &437672559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_drawParticles: 0
   m_recreateActor: 0
   m_asset: {fileID: 11400000, guid: 9dabcf09414f0964986feff1e22478b9, type: 2}
-  m_lifeTime: 10
+  m_lifeTime: 3
   m_startSpeed: 5
   m_isActive: 1
 --- !u!4 &437672561

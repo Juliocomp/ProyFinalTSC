@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Source
   m_EditorClassIdentifier: 
   m_particles: []
-  m_maxParticles: 20
+  m_maxParticles: 1000
   m_springIndices: 
   m_springCoefficients: []
   m_springRestLengths: []
@@ -30,7 +30,7 @@ MonoBehaviour:
   m_rebuildAsset: 0
   m_surfaceMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   m_meshLocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_meshTesselation: -1
+  m_meshTesselation: 0
   m_nozzlePositions:
   - {x: -0.025, y: -0.025, z: -1.5308085e-18}
   - {x: 0.025, y: 0.025, z: 1.5308085e-18}
