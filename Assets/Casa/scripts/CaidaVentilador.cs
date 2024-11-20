@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CaidaVentilador : MonoBehaviour
@@ -10,18 +8,22 @@ public class CaidaVentilador : MonoBehaviour
 
     void Start()
     {
-        // Obtener el componente Rigidbody del ventilador
         rb = GetComponent<Rigidbody>();
+
         if (rb == null)
         {
-            Debug.LogError("El ventilador no tiene un Rigidbody asignado.");
+            Debug.LogError("El ventilador no tiene un Rigidbody.");
+            return;
         }
+
+        // Iniciar como cinemático para que no caiga automáticamente
+        rb.isKinematic = true;
     }
 
     void Update()
     {
-        // Verificar si el jugador está cerca y presiona la tecla "E"
-        if (Vector3.Distance(transform.position, jugador.transform.position) < 5f && Input.GetKeyDown(teclaDeInteraccion))
+        // Verificar si el jugador está cerca y presiona "E"
+        if (Vector3.Distance(transform.position, jugador.transform.position) < 3f && Input.GetKeyDown(teclaDeInteraccion))
         {
             ActivarCaida();
         }
@@ -29,7 +31,7 @@ public class CaidaVentilador : MonoBehaviour
 
     private void ActivarCaida()
     {
-        // Activar la caída al quitar la cinemática
+        // Activar la caída
         rb.isKinematic = false;
         rb.useGravity = true;
     }

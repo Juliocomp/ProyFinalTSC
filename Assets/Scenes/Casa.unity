@@ -1670,6 +1670,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3720988016227955908, guid: a7ef34b70de7f8e43a27045047b5d009, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2271502847731017999, guid: a7ef34b70de7f8e43a27045047b5d009, type: 3}
       propertyPath: m_LocalScale.x
       value: 29.9
@@ -1716,6 +1720,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7ef34b70de7f8e43a27045047b5d009, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2031090731}
+    - targetCorrespondingSourceObject: {fileID: -7083151673487766290, guid: a7ef34b70de7f8e43a27045047b5d009, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2036694780}
   m_SourcePrefab: {fileID: 100100000, guid: a7ef34b70de7f8e43a27045047b5d009, type: 3}
 --- !u!1 &852068413
 GameObject:
@@ -3173,9 +3180,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1001 &1368406905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4517,7 +4524,33 @@ BoxCollider:
   m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 5, y: 0.1, z: 6}
-  m_Center: {x: -1, y: 3.12, z: -1.4}
+  m_Center: {x: -1, y: 3.2, z: -1.4}
+--- !u!1 &2036694775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7083151673487766290, guid: a7ef34b70de7f8e43a27045047b5d009, type: 3}
+  m_PrefabInstance: {fileID: 847968526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2036694780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036694775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.049999997, z: 0.040212743}
+  m_Center: {x: 0.0000000016298145, y: 1.7071135e-16, z: 0.0060063642}
 --- !u!1001 &2043297976
 PrefabInstance:
   m_ObjectHideFlags: 0
