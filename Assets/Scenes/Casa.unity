@@ -2390,7 +2390,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 20
-  m_SpotAngle: 100
+  m_SpotAngle: 120
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -2745,7 +2745,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 20
-  m_SpotAngle: 100
+  m_SpotAngle: 120
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -3071,7 +3071,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6592401360930831907, guid: 0bff6b77b23e5e14fbcafed4986e19e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1468810565}
+    - targetCorrespondingSourceObject: {fileID: 6592401360930831907, guid: 0bff6b77b23e5e14fbcafed4986e19e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1468810566}
   m_SourcePrefab: {fileID: 100100000, guid: 0bff6b77b23e5e14fbcafed4986e19e6, type: 3}
 --- !u!1001 &1368406905
 PrefabInstance:
@@ -3154,6 +3160,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf5f59cc38f7b2648bcefd8711177484, type: 3}
   m_PrefabInstance: {fileID: 1368406905}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1468810560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6592401360930831907, guid: 0bff6b77b23e5e14fbcafed4986e19e6, type: 3}
+  m_PrefabInstance: {fileID: 1333238107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468810565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468810560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8f2d21114d12f4d8b0a8660bb7330f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mensajeUI: {fileID: 1323807644}
+  jugador: {fileID: 198261235}
+  mensaje: Pulsa E para salir a la Isla
+--- !u!65 &1468810566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468810560}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.024945714, y: 0.02125131, z: 0.005}
+  m_Center: {x: -0.0071097924, y: 0.0006341245, z: -0.0000048661022}
 --- !u!1001 &1502663063
 PrefabInstance:
   m_ObjectHideFlags: 0
